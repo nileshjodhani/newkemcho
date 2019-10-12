@@ -9,7 +9,7 @@ error_reporting(0);
 ignore_user_abort(true);
 
 login_check();
-
+chatid = @tryinggroup;
 require(TEMPLATE_DIR . '/header.php');
 ?>
 <br />
