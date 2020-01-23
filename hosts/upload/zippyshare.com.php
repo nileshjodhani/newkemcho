@@ -61,7 +61,7 @@ if ($continue_up) {
 	$shorturl = strpbrk($shorturl,'{');
 	$shorturll = json_decode($shorturl,true);
 	$shorturlll = $shorturll['shortenedUrl'];
-	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text="."🎬 ".$lname."%0A%0A 📥 Download Link: ".$shorturlll;
+	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text="."🎬 ".$lname."%0A%0A 📥 Short Link: ".$shorturlll."%0A%0A 📥 Download Link: ".$download_link;
 	$detail = cURL($tgbase);
 
 }
