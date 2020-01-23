@@ -1,5 +1,8 @@
 <?php
 
+$_GET['proxy'] = isset($_GET['proxy']) ? $_GET['proxy'] : '';
+$not_done = true;
+$continue_up = true;
 
 if ($continue_up) {
 	$not_done = false;
