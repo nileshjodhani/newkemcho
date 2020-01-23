@@ -93,7 +93,12 @@ if ($continue_up) {
 	
 	$tgtoken = "853422522:AAGm1HLEfd8HY9ovg5sojnldNtn8uJJbvg4";	
 	$tgchatid = "@tryinggroup";
-	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$download_link;
+	$gpapi = "https://gplinks.in/api?api=d4a09d9a3deae813e0f385ec3092f34ac62452e3&url=";
+	$shorturl = cURL($gpapi.$download_link);
+	$shorturl = strpbrk($shorturl,'{');
+	$shorturll = json_decode($shorturl,true);
+	$shorturlll = $shorturll['shortenedUrl'];
+	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$lname.$shorturlll;
 	$detail = cURL($tgbase);
 
 }
