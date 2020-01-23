@@ -4,10 +4,7 @@ $upload_acc['zippyshare_com']['user'] = ''; //Set your userid/alias
 $upload_acc['zippyshare_com']['pass'] = ''; //Set your password
 ########################
 
-$gpapi = "https://gplinks.in/api?api=d4a09d9a3deae813e0f385ec3092f34ac62452e3&url=";
-$tgtoken = "853422522:AAGm1HLEfd8HY9ovg5sojnldNtn8uJJbvg4";	
-$tgchatid = "@tryinggroup";
-$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$chatid."&text=🎬 ";	
+
 
 $_GET['proxy'] = isset($_GET['proxy']) ? $_GET['proxy'] : '';
 $not_done = true;
@@ -88,15 +85,20 @@ if ($continue_up) {
 	echo "<script type='text/javascript'>document.getElementById('progressblock').style.display='none';</script>\n";
 
 	is_page($upfiles);
+	
 
 	if (preg_match('@https?://www\d*\.zippyshare\.com/v/\w+/file\.html@i', $upfiles, $link)) $download_link = $link[0];
+	$gpapi = "https://gplinks.in/api?api=d4a09d9a3deae813e0f385ec3092f34ac62452e3&url=";
+	$tgtoken = "853422522:AAGm1HLEfd8HY9ovg5sojnldNtn8uJJbvg4";	
+	$tgchatid = "@tryinggroup";
+	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$chatid."&text=🎬 ";	
 	
 	$shorturl = cURL($gpapi.$download_link);
 	$shorturl = strpbrk($shorturl,'{');
-$shorturll = json_decode($shorturl,true);
-$shorturlll = $shorturll['shortenedUrl'];
+	$shorturll = json_decode($shorturl,true);
+	$shorturlll = $shorturll['shortenedUrl'];
 	
-$detail = cURL($tgbase.$lname.'%0A%0A♾ Openload Link : '.$ourl.'%0A%0A😍 Shortlink : '.$shorturlll.'%0A%0A📤 Upload By : @GTMovies');
+	$detail = cURL($tgbase.$lname.'%0A%0A♾ Openload Link : '.$ourl.'%0A%0A😍 Shortlink : '.$shorturlll.'%0A%0A📤 Upload By : @GTMovies');
 	else html_error('Download link not found.');
 
 }
