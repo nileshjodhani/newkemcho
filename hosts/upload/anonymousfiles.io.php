@@ -19,6 +19,7 @@
   $anonnnn = $anonnn['url'];
   if(empty($anonnn['url'])){
 		html_error('[50x1]Error: Plugin Update Required');
+  }
   $akgh = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$anonnnn;
   $akju = cURL($akgh);
   $download_link = $anonnnn
