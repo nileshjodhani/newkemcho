@@ -11,7 +11,7 @@
   $uploc = 'https://api.anonymousfiles.io/';
 	$url = parse_url($uploc);
 	echo "<script type='text/javascript'>document.getElementById('info').style.display='none';</script>\n";
-	$upfiles = upfile($url['host'], $url['path'], $lfile, $lname, 'file','', $_GET['proxy'], 0, $url['scheme']);
+	$upfiles = upfile($url['host'], 0, $url['path'], 0, 0, 0, $lfile, $lname, 'file','', 0, 0, 0, $url['scheme']);
 	echo "<script type='text/javascript'>document.getElementById('progressblock').style.display='none';</script>\n";
 	
   $anonn = strpbrk($upfiles,'{');
