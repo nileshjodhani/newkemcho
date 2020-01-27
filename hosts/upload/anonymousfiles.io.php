@@ -19,6 +19,7 @@
   $anonnnn = $anonnn['url'];
   $akgh = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$anonnnn;
   $akju = cURL($akgh);
+  $download_link = $anonnnn
         
         
         
