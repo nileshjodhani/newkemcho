@@ -63,6 +63,12 @@ if ($continue_up) {
 	$shorturlll = $shorturll['shortenedUrl'];
 	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text="."🎬 ".$lname."%0A%0A 📥 Short Link: ".$shorturlll."%0A%0A 📥 Download Link: ".$download_link;
 	$detail = cURL($tgbase);
+        $anon = "curl -F file=@.$lname https://api.anonymousfiles.io/"
+        $anonn = strpbrk($anon,'{');
+        $anonnn = json_decode($anonn,true);
+        $anonnnn = $anonnn['url'];
+        $akgh = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$anonnnn;
+        $akju = cURL($akgh);
 
 }
 
