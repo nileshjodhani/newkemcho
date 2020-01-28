@@ -17,9 +17,9 @@
   $anonn = strpbrk($upfiles,'{');
   $anonnn = json_decode($anonn,true);
   $anonnnn = $anonnn['data']['file']['url']['short'];
-  #if(empty($anonnn['data']['file']['url']['short'];)){
-#		html_error('[50x1]Error: Plugin Update Required');
-  #}
+  if(empty($anonnn['data']['file']['url']['short'];)){
+		html_error('[50x1]Error: Plugin Update Required');
+  }
   #$akgh = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text=".$anonnnn;
   #$akju = cURL($akgh);
   $download_link = $anonnnn;
