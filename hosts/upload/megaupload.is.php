@@ -8,7 +8,7 @@
 	
   $tgchatid = "@tryinggroup";
 
-  $uploc = 'https://api.megaupload.is/upload';
+  $uploc = 'https://api.megaupload.is/upload/';
 	$url = parse_url($uploc);
 	echo "<script type='text/javascript'>document.getElementById('info').style.display='none';</script>\n";
 	$upfiles = upfile($url['host'], 0, $url['path'], 0, 0, 0, $lfile, $lname, 'file','', 0, 0, 0, $url['scheme']);
