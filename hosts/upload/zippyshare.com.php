@@ -57,11 +57,15 @@ if ($continue_up) {
 	$tgtoken = "853422522:AAGm1HLEfd8HY9ovg5sojnldNtn8uJJbvg4";	
 	$tgchatid = "@tryinggroup";
 	$gpapi = "https://gplinks.in/api?api=d4a09d9a3deae813e0f385ec3092f34ac62452e3&url=";
+	$shorapi = "https://api.shorte.st/s/d3c901a7e36354d8fc57ec1e6b4a3cab/";
+	$shorapi = cURL($shorapi.$download_link);
+	$shorapi = json_decode($shorapi,true);
+	$shorapi = $shorapi['shortenedUrl'];
 	$shorturl = cURL($gpapi.$download_link);
 	$shorturl = strpbrk($shorturl,'{');
 	$shorturll = json_decode($shorturl,true);
 	$shorturlll = $shorturll['shortenedUrl'];
-	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text="."🎬 ".$lname."%0A%0A 📥 Short Link: ".$shorturlll."%0A%0A 📥 Download Link: ".$download_link;
+	$tgbase = "https://api.telegram.org/bot".$tgtoken."/sendmessage?chat_id=".$tgchatid."&text="."🎬 ".$lname."%0A%0A 📥 Short Link: ".$shorturlll."%0A%0A 📥 Download Link: ".$download_link."%0A%0A 📥 Short Link: ".$shorapi;
 	$detail = cURL($tgbase);
         #$anon = "curl -F file=@.$lname https://api.anonymousfiles.io/"
         #$anonn = strpbrk($anon,'{');
