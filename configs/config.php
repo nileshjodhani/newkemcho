@@ -6,7 +6,7 @@ if (!defined('RAPIDLEECH')) {
 
 $options = array (
   'secretkey' => 'zNqb99BRXpYpBDqxDiEXTSJ0w6lZ1pdZE6xFPQNhLX6A2EOuRYJql4+5',
-  'download_dir' => 'Download/',
+  'download_dir' => 'files/',
   'download_dir_is_changeable' => false,
   'delete_delay' => 0,
   'rename_prefix' => '@GTMovies ',
