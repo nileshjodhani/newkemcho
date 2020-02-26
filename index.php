@@ -5,7 +5,7 @@ ignore_user_abort(true);
 login_check();
 
 // If configs/files.lst is not writable, give a warning
-if (!is__writable(CONFIG_DIR . 'files.lst')) html_error(lang(304));
+if (!is__writable(CONFIG_DIR . 'Download.lst')) html_error(lang(304));
 
 // If the download path is not writable, show error
 if (!is__writable(DOWNLOAD_DIR)) html_error(DOWNLOAD_DIR . lang(305));
